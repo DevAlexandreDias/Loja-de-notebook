@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; connect-src https://viacep.com.br; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Loja de Notebook | Seminovos com laudo e assistência técnica</title>
+<title>UTI do Notebook | Seminovos com laudo, garantia e assistência técnica</title>
 <meta name="description" content="Notebooks, MacBooks e computadores seminovos com laudo técnico e garantia. Assistência técnica e pedidos pelo WhatsApp.">
-<meta property="og:title" content="Loja de Notebook | Seminovos com laudo e garantia">
+<meta property="og:title" content="UTI do Notebook | Seminovos com laudo e garantia">
 <meta property="og:description" content="Seminovos testados peça por peça e conserto de notebooks, computadores e MacBooks.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta name="theme-color" content="#0A6B66">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A6B66'/%3E%3Cpath d='M5 17h6l2-5 3 10 3-7 1 2h7' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230E0C0A'/%3E%3Cg%20fill='%23fff'%20transform='translate%285%209.2%29%20scale%280.0327%29%20translate%28-174%20-37%29'%3E%3Cpath%20d='M174%2037H297V308.3A27%2027%200%200%200%20351%20308.3V37H474V308.3A150%20150%200%200%201%20174%20308.3Z'/%3E%3Cpath%20d='M351%2037H750.07A70%2070%200%201%200%20846%20130.02V458.3H723V164H661V458.3H538V164H351Z'/%3E%3Cpath%20d='M816.93%2037H846V66.98A70%2070%200%200%200%20816.93%2037Z'/%3E%3Ccircle%20cx='783.5'%20cy='98.5'%20r='63'%20fill='%23B80908'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#F2F6F7; --surface:#FFFFFF; --ink:#12262E; --ink-2:#465B63; --line:#CFDCE0; --field:#7A8F96;
@@ -387,6 +387,173 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
   .stepper{font-size:.78rem}
   .co-main{padding:4px 16px 20px}
 }
+
+/* ===== tema UTI do Notebook: preto quente, vermelho UTI, Poppins + Montserrat ===== */
+:root{
+  --uti-black:#0E0C0A; --uti-coal:#191919; --uti-ember:#1E1A17; --uti-red:#B80908; --uti-red-deep:#8E0706;
+  --uti-signal:#C40000; --uti-paper:#F3F4F6; --uti-mist:#E8E9EC; --uti-warm:#D9D5D0;
+  --paper:var(--uti-paper); --ink:#0E0C0A; --ink-2:#4B4743; --line:#D8D9DD; --field:#7B7772;
+  --teal:#B80908; --teal-ink:#8E0706; --teal-tint:#FBE8E7; --pulse:#D40000;
+  --display:'Poppins','Segoe UI',system-ui,sans-serif;
+  --body:'Montserrat','Segoe UI',system-ui,-apple-system,Roboto,sans-serif;
+  --shadow-s:0 1px 2px rgba(14,12,10,.08),0 10px 26px -14px rgba(14,12,10,.5);
+  --shadow-m:0 2px 4px rgba(14,12,10,.1),0 24px 46px -20px rgba(14,12,10,.6);
+  --hdr:72px;
+}
+body{background:var(--paper);letter-spacing:0}
+.hero :focus-visible,.site-hdr :focus-visible,.assist :focus-visible,.site-ftr :focus-visible,.bottom-nav :focus-visible{outline-color:#fff}
+.demo-bar{background:var(--uti-red);color:#fff;font-weight:600;font-size:.82rem}
+
+/* logo (símbolo SVG embutido) */
+.uti-sprite{position:absolute;width:0;height:0;overflow:hidden}
+.uti-logo{display:block;height:50px;width:auto;aspect-ratio:702/532;fill:currentColor;color:#fff}
+.logo,.logo:hover{color:#fff}
+
+/* cabeçalho */
+.site-hdr{background:var(--uti-black);backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom:0;box-shadow:0 16px 30px -26px #000}
+.search input{border-color:transparent;background:#fff}
+.search input:focus{border-color:#fff;box-shadow:0 0 0 3px rgba(212,0,0,.55)}
+.hdr-nav a.navlink{color:#fff;border-radius:999px}
+.hdr-nav a.navlink:hover{background:var(--uti-ember);color:#fff}
+.icon-btn{border-radius:999px}
+.hdr-nav .wa-top{background:var(--uti-red);border-color:var(--uti-red);color:#fff}
+.hdr-nav .wa-top:hover{background:var(--uti-red-deep);border-color:var(--uti-red-deep);color:#fff}
+.hdr-nav .cart-top{background:transparent;border-color:#6F6A64;color:#fff}
+.hdr-nav .cart-top:hover{background:var(--uti-ember);border-color:#fff;color:#fff}
+.badge-count{background:var(--uti-red);font-family:var(--display);font-weight:700}
+.badge-count[data-n="0"]{background:#4B4743}
+
+/* botões */
+.btn{border-radius:999px;font-family:var(--body);font-weight:700}
+.btn-primary{background:var(--uti-red);box-shadow:0 8px 18px -10px rgba(184,9,8,.9)}
+@media (hover:hover){.btn-primary:hover{background:var(--uti-red-deep);transform:translateY(-1px)}}
+.btn-line{border-color:var(--uti-black);color:var(--uti-black)}
+@media (hover:hover){.btn-line:hover{background:var(--uti-black);color:#fff}}
+
+/* hero: o ponto do "i" da logo vira o fundo (círculo vermelho cortado por um anel preto) */
+.hero{position:relative;overflow:hidden;color:#fff;background:var(--uti-black);padding:44px 0 124px}
+.hero-grid{position:relative}
+.hero-grid::after{content:"";position:absolute;pointer-events:none;z-index:0;right:-70px;bottom:-40px;width:320px;height:320px;border-radius:50%;background:var(--uti-red);box-shadow:0 0 0 14px var(--uti-black),0 0 0 16px #2A2522}
+.hero-copy,.ecg{position:relative;z-index:1}
+.hero h1{color:#fff;font-family:var(--display);font-weight:800;letter-spacing:-.02em}
+.hero-lede{color:#F1EEEB}
+.hero .btn-primary{background:var(--uti-red);border-color:#E0302B;color:#fff;box-shadow:none}
+@media (hover:hover){.hero .btn-primary:hover{background:#fff;color:var(--uti-black)}}
+.hero .btn-line{border-color:rgba(255,255,255,.7);color:#fff}
+@media (hover:hover){.hero .btn-line:hover{background:#fff;color:var(--uti-black)}}
+.hero-pills{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.hero-pills li{display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.3);font-size:.88rem;font-weight:600;color:#fff}
+.hero-pills li::before{content:"";width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.18)}
+.ecg .trace{stroke:#fff;filter:none}
+.ecg .deck{fill:var(--uti-warm)}
+.ecg .glass{fill:var(--uti-black)}
+.ecg .alive{stroke:#FF4B43;filter:drop-shadow(0 0 5px rgba(255,75,67,.8))}
+@media (min-width:1025px){
+  .hero{padding:68px 0 132px}
+  .hero h1{font-size:clamp(2.6rem,3.5vw,3.1rem)}
+  .hero-grid::after{right:-16px;bottom:auto;top:50%;transform:translateY(-50%);width:500px;height:500px;box-shadow:0 0 0 18px var(--uti-black),0 0 0 20px #2A2522}
+}
+
+/* faixa de confiança: azulejos pretos com ícone em círculo branco, como no catálogo da UTI */
+.trust{position:relative;z-index:2;margin-top:-72px;padding:0;border:0;gap:16px}
+.trust li{background:var(--uti-coal);color:#D3CFCA;border-radius:20px;padding:18px;box-shadow:var(--shadow-m);align-items:center}
+.trust strong{color:#fff;font-family:var(--display);font-weight:700}
+.trust svg{width:52px;height:52px;padding:13px;border-radius:50%;background:#fff;color:var(--uti-black);margin:0}
+
+/* títulos de seção */
+.sec-head h2{font-family:var(--display);font-weight:800;letter-spacing:-.02em}
+.sec-head h2::after{content:"";display:block;width:56px;height:6px;border-radius:3px;margin-top:12px;background:var(--uti-red)}
+#loja{padding-top:56px}
+
+/* filtros: pílulas pretas, ativa em vermelho */
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--uti-black);border-color:var(--uti-black);color:#fff;font-family:var(--display);font-weight:600;font-size:.92rem}
+.chip::before{content:"";width:9px;height:9px;border-radius:50%;background:#fff}
+@media (hover:hover){.chip:hover{background:var(--uti-ember);border-color:var(--uti-ember)}}
+.chip[aria-pressed="true"]{background:var(--uti-red);border-color:var(--uti-red);color:#fff}
+.af{background:var(--uti-black);color:#fff}
+.af-clear{color:var(--uti-red-deep)}
+.result-count{font-family:var(--display)}
+
+/* cartões de produto */
+.grid{gap:24px}
+.card{border:0;border-radius:20px;box-shadow:var(--shadow-s);transition:transform .18s ease,box-shadow .18s ease}
+@media (hover:hover){.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-m)}}
+.tray{background:radial-gradient(circle at 50% 42%,#fff 0,#fff 30%,#E6E7EA 100%)}
+.cond{background:#fff;color:var(--uti-black);border:1.5px solid var(--uti-black);padding:3px 10px;font-family:var(--display)}
+.cond.novo{background:var(--uti-black);color:#fff}
+.off{position:absolute;right:12px;top:12px;padding:4px 10px;border-radius:999px;background:var(--uti-red);color:#fff;font-family:var(--display);font-size:.8rem;font-weight:700}
+.card-cat{color:var(--uti-red);font-weight:700;font-size:.8rem}
+.card-title{font-family:var(--display);font-weight:700;font-size:.98rem;text-transform:uppercase;letter-spacing:.005em;line-height:1.25}
+.card-title:hover{color:var(--uti-red)}
+.price .was{font-size:.85rem;color:var(--uti-signal);text-decoration:line-through;font-weight:500}
+.price .now{font-family:var(--display);font-weight:800;font-size:1.5rem;letter-spacing:-.01em;line-height:1.15}
+.price .now .now-l{font-family:var(--body);font-size:.78rem;font-weight:600;color:var(--ink-2);letter-spacing:0}
+.price .inst{font-size:.82rem}
+.price .pix{display:inline-block;margin-top:4px;padding:3px 12px;border-radius:999px;background:var(--uti-black);color:#fff;font-weight:600}
+.vital .bar{background:#DADBDF}
+
+/* assistência: faixa preta */
+.assist{background:var(--uti-black);border:0;color:#D3CFCA}
+.assist h2{color:#fff}
+.assist .sec-head p{color:#D3CFCA}
+.services li{border-bottom-color:rgba(255,255,255,.16)}
+.services strong{color:#fff;font-family:var(--display);font-weight:700}
+.services span{color:#D3CFCA}
+.services svg{width:44px;height:44px;padding:11px;border-radius:50%;margin-top:0;background:#fff;color:var(--uti-black)}
+.steps li::before{background:var(--uti-red);color:#fff;font-family:var(--display)}
+.steps li:nth-child(odd)::after{background:rgba(255,255,255,.28)}
+.steps strong{color:#fff;font-family:var(--display)}
+.steps span{color:#D3CFCA}
+.form-panel{color:var(--ink);background:#fff;border:0;border-radius:24px;box-shadow:0 30px 60px -24px rgba(0,0,0,.7)}
+
+/* lojas e dúvidas */
+#lojas{background:#fff}
+.store{background:var(--uti-paper);border:0;border-top:6px solid var(--uti-red);border-radius:20px;box-shadow:none}
+.store a{color:var(--uti-red-deep)}
+#duvidas{padding-top:64px!important}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:10px;padding:0 20px}
+.faq details[open]{border-color:var(--uti-black);box-shadow:var(--shadow-s)}
+.faq summary{padding:18px 40px 18px 0;font-family:var(--display);font-weight:600}
+.faq details p{padding-bottom:18px}
+
+/* rodapé */
+.site-ftr{position:relative;margin-top:0;background:var(--uti-black);color:#D3CFCA}
+.site-ftr::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--uti-red)}
+.ftr-logo{height:64px;margin-bottom:14px}
+
+/* barra inferior (celular) */
+.bottom-nav{background:var(--uti-black);border-top:0}
+.bottom-nav a,.bottom-nav button{color:#fff}
+.bottom-nav .badge-count{background:var(--uti-red)}
+
+/* janelas */
+dialog{border-radius:24px}
+.pd-tray{background:radial-gradient(circle at 50% 42%,#fff 0,#fff 30%,#E6E7EA 100%)}
+.ci-tray{background:var(--uti-mist)}
+.chart{border-color:var(--uti-black)}
+.chart-head{background:var(--uti-black)}
+.dlg-head{background:#fff}
+.stepper li.done::before,.stepper li.current::before{background:var(--uti-red)}
+.option:has(input:checked){background:#FBE8E7;border-color:var(--uti-red)}
+
+@media (max-width:760px){
+  .hero{padding:32px 0 104px}
+  .uti-logo{height:44px}
+  .trust{margin-top:-60px}
+  .trust li{padding:14px}
+  .trust svg{width:44px;height:44px;padding:10px}
+}
+@media (max-width:560px){
+  .card{border-radius:16px}
+  .price .now{font-size:1.2rem}
+  .price .now .now-l{display:block;font-size:.72rem}
+  .card .price .pix{padding:2px 8px;white-space:nowrap;font-size:.76rem}
+  .off-l{display:none}
+  .off{right:8px;top:8px;font-size:.72rem;padding:3px 8px}
+  .card-title{font-size:.88rem}
+  .hero-pills li{font-size:.82rem;padding:0 12px}
+  .trust{gap:10px}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -399,15 +566,15 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
 </style>
 </head>
 <body>
+<svg class="uti-sprite" aria-hidden="true" focusable="false"><defs><g id="uti-shapes"><path d="M174 37H297V308.3A27 27 0 0 0 351 308.3V37H474V308.3A150 150 0 0 1 174 308.3Z"/><path d="M351 37H750.07A70 70 0 1 0 846 130.02V458.3H723V164H661V458.3H538V164H351Z"/><path d="M816.93 37H846V66.98A70 70 0 0 0 816.93 37Z"/><circle cx="783.5" cy="98.5" r="63"/><text x="165" y="551" font-family="Montserrat,Poppins,Arial,sans-serif" font-weight="800" font-style="italic" font-size="90" textLength="692" lengthAdjust="spacingAndGlyphs">DO NOTEBOOK</text></g></defs></svg>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<div class="demo-bar" role="note"><span class="demo-long">Protótipo de demonstração: produtos, preços e condições são exemplos e precisam ser confirmados pela loja.</span><span class="demo-short">Protótipo: produtos e preços são exemplos.</span></div>
+<div class="demo-bar" role="note"><span class="demo-long">Prévia da loja: parte dos produtos é exemplo. Confirme preço e estoque pelo WhatsApp.</span><span class="demo-short">Prévia: confirme preço e estoque pelo WhatsApp.</span></div>
 
 <header class="site-hdr">
   <div class="wrap hdr">
-    <a class="logo" href="#topo" aria-label="Loja de Notebook, ir para o início">
-      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#0A6B66"/><rect x="9" y="11" width="22" height="15" rx="2.5" fill="none" stroke="#fff" stroke-width="2.4"/><path d="M6 30h28" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><path d="M12 19h4l1.6-3.5 2.4 7 2.2-5 1 1.5H28" fill="none" stroke="#FF8A95" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span class="logo-txt">Loja de Notebook<small>Seminovos e assistência</small></span>
+    <a class="logo" href="#topo" aria-label="UTI do Notebook, ir para o início">
+      <svg class="uti-logo" viewBox="160 30 702 532" aria-hidden="true" focusable="false"><use href="#uti-shapes"/></svg>
     </a>
     <form class="search" role="search" id="searchForm">
       <label for="q" class="sr-only">Buscar produtos</label>
@@ -443,6 +610,7 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
         <a class="btn btn-primary" href="#loja">Ver seminovos</a>
         <a class="btn btn-line" href="#assistencia">Agendar conserto</a>
       </div>
+      <ul class="hero-pills" aria-label="Condições da loja"><li>Pronta entrega</li><li>Pix com desconto</li><li>Cartão em até 18x</li></ul>
       </div>
       <svg class="ecg ecg-side" viewBox="380 30 620 236" role="img" aria-label="Ilustração: linha de batimento cardíaco que desenha um notebook e o liga">
         <rect class="glass" x="566" y="48" width="308" height="146" rx="4"/>
@@ -604,7 +772,8 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
   <div class="wrap">
     <div class="ftr-grid">
       <div>
-        <h2>Loja de Notebook</h2>
+        <svg class="uti-logo ftr-logo" viewBox="160 30 702 532" aria-hidden="true" focusable="false"><use href="#uti-shapes"/></svg>
+        <h2 class="sr-only">UTI do Notebook</h2>
         <p>Manutenção de notebooks, computadores e MacBooks e venda de seminovos com laudo técnico.</p>
       </div>
       <div>
@@ -612,6 +781,7 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
         <ul>
           <li><a data-wa="Olá! Vim pelo site e queria tirar uma dúvida." href="#" target="_blank" rel="noopener">Fale pelo WhatsApp</a></li>
           <li><a href="#lojas">Endereços das lojas</a></li>
+          <li><a href="https://www.instagram.com/utidonotebookexpress/" target="_blank" rel="noopener">Instagram @utidonotebookexpress</a></li>
           <li><a href="#duvidas">Dúvidas frequentes</a></li>
         </ul>
       </div>
@@ -623,7 +793,7 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
         </ul>
       </div>
     </div>
-    <p class="ftr-bottom">Protótipo de demonstração. Preços e condições sujeitos a confirmação pela loja.</p>
+    <p class="ftr-bottom">Preços e condições sujeitos a confirmação pela loja. Parte dos produtos é exemplo. CNPJ 44.988.571/0001-51.</p>
   </div>
 </footer>
 
@@ -732,8 +902,8 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
         <fieldset>
           <legend class="sr-only">Forma de pagamento</legend>
           <div class="options">
-            <label class="option"><input type="radio" name="pay" value="pix" checked><div><strong>Pix com 5% de desconto</strong><span id="payPixVal"></span></div></label>
-            <label class="option"><input type="radio" name="pay" value="cartao"><div><strong>Cartão de crédito</strong><span>Até 10x sem juros. A loja envia o link de pagamento.</span></div></label>
+            <label class="option"><input type="radio" name="pay" value="pix" checked><div><strong>Pix com desconto</strong><span id="payPixVal"></span></div></label>
+            <label class="option"><input type="radio" name="pay" value="cartao"><div><strong>Cartão de crédito</strong><span>Até 18x, com acréscimo. A loja informa o valor das parcelas e envia o link de pagamento.</span></div></label>
             <label class="option"><input type="radio" name="pay" value="loja"><div><strong>Pagar na retirada</strong><span>Pix, cartão ou dinheiro no balcão da loja.</span></div></label>
           </div>
         </fieldset>
@@ -787,9 +957,9 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
 
 /* ---------- configuração ---------- */
 // Coloque aqui o WhatsApp da loja com 55 + DDD (ex.: '5583999999999'). Vazio = a pessoa escolhe o contato.
-const WA_NUMBER = '';
+const WA_NUMBER = '5583993852525';
 const PIX_OFF = 0.05;
-const MAX_INST = 10;
+const MAX_INST = 18;
 const MAX_QTY = 5;
 
 const STORES = [
@@ -800,12 +970,21 @@ const STORES = [
 const CATS = {
   notebook:{ label:'Notebooks' }, macbook:{ label:'MacBooks' }, computador:{ label:'Computadores' },
   aio:{ label:'All in One' }, monitor:{ label:'Monitores' }, impressora:{ label:'Impressoras' },
-  tablet:{ label:'Tablets' }, som:{ label:'Caixas de som' }
+  tablet:{ label:'Tablets' }, som:{ label:'Caixas de som' },
+  celular:{ label:'Celulares' }, projetor:{ label:'Projetores' }
 };
+// cor de cada categoria: hue = ilustração, color = texto/botões (contraste AA), tint = fundo claro
+const CC = Object.fromEntries(Object.keys(CATS).map(k => [k, ['#B80908', '#B80908', '#E6E7EA']]));
+Object.entries(CC).forEach(([k,[hue,color,tint]]) => Object.assign(CATS[k], { hue, color, tint }));
+const catStyle = c => `--c:${CATS[c].color};--t:${CATS[c].tint}`;
 
 const H = { teal:'#2E8C86', blue:'#3B6EA8', lilac:'#4C6E96', green:'#3E8E5A', amber:'#A57A32', slate:'#557580', rose:'#2F6F73' };
 
 const PRODUCTS = [
+  // Itens reais do catálogo da loja (preço cheio e preço no Pix informados pela loja)
+  { id:'ultragear32', cat:'monitor', cond:'novo', name:'Monitor LG UltraGear 32"', specs:['Full HD de 32" com 144 Hz','Painel VA','Entradas HDMI e VGA','Alto-falante integrado'], price:1399, pix:1199, warranty:'6 meses (garantia estendida opcional, cobrada à parte)', real:true },
+  { id:'proj5200', cat:'projetor', cond:'novo', name:'Projetor Intelbras 5200 LMS 3', specs:['5200 lúmens','Full HD','3 entradas HDMI','Wi-Fi e Bluetooth'], price:1699, pix:1399, real:true },
+  { id:'iphone13', cat:'celular', cond:'seminovo', name:'iPhone 13 128 GB', specs:['128 GB de armazenamento','Aparelho original','Bateria com 87% de saúde'], price:2299, pix:1999, bat:87, warranty:'3 meses', info:[['Aparelho','Original'],['Armazenamento','128 GB'],['Saúde da bateria','87% da capacidade original'],['Garantia','3 meses']], real:true },
   { id:'mba-m1', cat:'macbook', cond:'seminovo', name:'MacBook Air M1 (2020)', specs:['Chip Apple M1','8 GB de memória','SSD de 256 GB','Tela Retina de 13,3"'], price:3999, bat:91, ssd:98, hue:H.slate },
   { id:'lat-5420', cat:'notebook', cond:'seminovo', name:'Dell Latitude 5420', specs:['Intel Core i5 de 11ª geração','16 GB de memória','SSD de 256 GB','Tela Full HD de 14"'], price:2399, bat:88, ssd:96, hue:H.blue },
   { id:'t14', cat:'notebook', cond:'seminovo', name:'Lenovo ThinkPad T14 Gen 2', specs:['AMD Ryzen 5 PRO 5650U','16 GB de memória','SSD de 512 GB','Tela Full HD de 14"'], price:2899, bat:90, ssd:97, hue:H.teal },
@@ -834,6 +1013,8 @@ const $$ = (s, el=document) => [...el.querySelectorAll(s)];
 const money = new Intl.NumberFormat('pt-BR', { style:'currency', currency:'BRL' });
 const brl = v => money.format(v);
 const pixOf = v => Math.round(v * (1 - PIX_OFF) * 100) / 100;
+const pixItem = p => p.pix != null ? p.pix : pixOf(p.price);
+const offPct = p => p.pix != null ? Math.round((1 - p.pix / p.price) * 100) : 0;
 const instOf = (v, n) => Math.ceil((v / n) * 100) / 100;
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
 const norm = s => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
@@ -850,7 +1031,8 @@ const pulse = (x, y, w) => {
   return `<path d="M${x} ${y}h${28*s}l${5*s}-${6*s} ${5*s} ${6*s}h${8*s}l${5*s}-${22*s} ${7*s} ${36*s} ${6*s}-${24*s} ${4*s} ${10*s}h${30*s}" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>`;
 };
 function illus(cat, hue){
-  const D = '#1D3640', M = '#8FA4AB';
+  hue = CATS[cat].hue;
+  const D = '#1E1A17', M = '#A9A5A0';
   const open = '<svg viewBox="0 0 200 140" aria-hidden="true" focusable="false">';
   const art = {
     notebook:`<rect x="38" y="14" width="124" height="84" rx="6" fill="${D}"/><rect x="45" y="21" width="110" height="70" rx="2" fill="${hue}"/>${pulse(52,58,96)}<path d="M22 100H178l-11 13H33Z" fill="${M}"/><rect x="84" y="100" width="32" height="4" rx="2" fill="#6F858C"/>`,
@@ -859,6 +1041,8 @@ function illus(cat, hue){
     aio:`<rect x="28" y="10" width="144" height="96" rx="7" fill="${D}"/><rect x="35" y="17" width="130" height="74" rx="2" fill="${hue}"/>${pulse(46,56,108)}<path d="M88 106h24l8 18H80Z" fill="${M}"/><rect x="68" y="123" width="64" height="6" rx="3" fill="${M}"/>`,
     monitor:`<rect x="24" y="12" width="152" height="90" rx="5" fill="${D}"/><rect x="29" y="17" width="142" height="78" rx="2" fill="${hue}"/>${pulse(42,58,116)}<rect x="94" y="102" width="12" height="18" fill="${M}"/><path d="M66 120h68l-6 9H72Z" fill="${M}"/>`,
     impressora:`<rect x="62" y="12" width="76" height="36" rx="3" fill="#fff" stroke="${M}" stroke-width="2"/><rect x="28" y="40" width="144" height="64" rx="10" fill="${D}"/><rect x="42" y="52" width="44" height="14" rx="3" fill="${hue}"/><circle cx="150" cy="59" r="5" fill="${M}"/><rect x="146" y="72" width="16" height="22" rx="3" fill="${hue}"/><rect x="52" y="88" width="88" height="34" rx="2" fill="#fff" stroke="${M}" stroke-width="2"/><path d="M64 100h40M64 109h58" stroke="#C3D0D4" stroke-width="3" stroke-linecap="round"/>`,
+    celular:`<rect x="70" y="6" width="60" height="128" rx="14" fill="${D}"/><rect x="75" y="12" width="50" height="116" rx="10" fill="${hue}"/><rect x="91" y="17" width="18" height="5" rx="2.5" fill="${D}"/>${pulse(80,76,40)}<rect x="88" y="122" width="24" height="3" rx="1.5" fill="#fff" opacity=".6"/>`,
+    projetor:`<path d="M137 66L198 36V110L137 80Z" fill="${hue}" opacity=".28"/><rect x="18" y="46" width="124" height="56" rx="12" fill="${D}"/><circle cx="118" cy="74" r="20" fill="${M}"/><circle cx="118" cy="74" r="13" fill="${hue}"/><circle cx="113" cy="69" r="4" fill="#fff" opacity=".7"/><path d="M34 62h40M34 72h40M34 82h40" stroke="${M}" stroke-width="3" stroke-linecap="round"/><rect x="34" y="102" width="14" height="6" rx="2" fill="${M}"/><rect x="112" y="102" width="14" height="6" rx="2" fill="${M}"/>`,
     tablet:`<rect x="64" y="8" width="72" height="124" rx="11" fill="${D}"/><rect x="70" y="16" width="60" height="108" rx="3" fill="${hue}"/>${pulse(76,72,48)}`,
     som:`<rect x="22" y="38" width="156" height="66" rx="33" fill="${D}"/><circle cx="62" cy="71" r="21" fill="${hue}"/><circle cx="62" cy="71" r="9" fill="${D}" opacity=".35"/><circle cx="138" cy="71" r="21" fill="${hue}"/><circle cx="138" cy="71" r="9" fill="${D}" opacity=".35"/><rect x="90" y="58" width="20" height="26" rx="5" fill="#4C6670"/>`
   };
@@ -869,6 +1053,7 @@ const ICON_X = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strok
 
 /* ---------- laudo ---------- */
 function laudo(p){
+  if (p.info) return p.info;
   if (p.cond === 'novo') return null;
   const rows = [];
   const base = {
@@ -923,18 +1108,18 @@ function filtered(){
 /* ---------- render do catálogo ---------- */
 function renderChips(){
   const all = [['todos','Todos'], ...Object.entries(CATS).map(([k,v]) => [k, v.label])];
-  $('#chips').innerHTML = all.map(([k,l]) => `<button type="button" class="chip" data-cat="${k}" aria-pressed="${state.cat===k}">${esc(l)}</button>`).join('');
+  $('#chips').innerHTML = all.map(([k,l]) => `<button type="button" class="chip" data-cat="${k}" style="--c:#B80908" aria-pressed="${state.cat===k}">${esc(l)}</button>`).join('');
 }
 function vitalHTML(p){
-  if (p.cond === 'novo') return `<p class="vital neutral">Novo, lacrado</p>`;
+  if (p.cond === 'novo') return `<p class="vital neutral">${p.real ? 'Novo, pronta entrega' : 'Novo, lacrado'}</p>`;
   if (p.bat) return `<p class="vital"><span class="bar" aria-hidden="true"><i style="width:${p.bat}%"></i></span>Bateria ${p.bat}%</p>`;
   return `<p class="vital">${ICON_OK.replace('<svg','<svg width="16" height="16"')}Laudo aprovado</p>`;
 }
 function cardHTML(p){
   const cat = CATS[p.cat].label;
-  return `<article class="card">
+  return `<article class="card" style="${catStyle(p.cat)}">
     <button type="button" class="tray" data-open="${p.id}" aria-label="Ver detalhes de ${esc(p.name)}">
-      <span class="cond ${p.cond}">${p.cond === 'novo' ? 'Novo' : 'Seminovo'}</span>${illus(p.cat, p.hue)}
+      <span class="cond ${p.cond}">${p.cond === 'novo' ? 'Novo' : 'Seminovo'}</span>${offPct(p) ? `<span class="off">−${offPct(p)}%<span class="off-l"> no Pix</span></span>` : ''}${illus(p.cat, p.hue)}
     </button>
     <div class="card-body">
       <p class="card-cat">${esc(cat)}</p>
@@ -942,9 +1127,9 @@ function cardHTML(p){
       <p class="card-specs">${esc(p.specs.slice(0,3).join(', '))}</p>
       ${vitalHTML(p)}
       <div class="price">
-        <div class="now">${brl(p.price)}</div>
-        <div class="pix">${brl(pixOf(p.price))} no Pix</div>
-        <div class="inst">ou ${MAX_INST}x de ${brl(instOf(p.price, MAX_INST))} sem juros</div>
+        ${pixItem(p) < p.price ? `<div class="was">${brl(p.price)}</div>` : ''}
+        <div class="now">${brl(pixItem(p))}<span class="now-l"> no Pix</span></div>
+        <div class="inst">Cartão em até ${MAX_INST}x, com acréscimo</div>
       </div>
       <button type="button" class="btn btn-primary" data-add="${p.id}"><span>Adicionar<span class="long"> ao carrinho</span></span></button>
     </div>
@@ -981,6 +1166,7 @@ let cart = store.get('loja-notebook-cart-v1', []).filter(i => byId[i.id] && Numb
 const saveCart = () => store.set('loja-notebook-cart-v1', cart);
 const cartCount = () => cart.reduce((s,i) => s + i.qty, 0);
 const cartTotal = () => cart.reduce((s,i) => s + byId[i.id].price * i.qty, 0);
+const pixTotal = () => Math.round(cart.reduce((s,i) => s + pixItem(byId[i.id]) * i.qty, 0) * 100) / 100;
 
 function updateBadges(bump){
   const n = cartCount();
@@ -1015,7 +1201,7 @@ function renderCart(){
   }
   foot.hidden = false;
   ul.innerHTML = cart.map(i => { const p = byId[i.id]; return `<li class="ci">
-      <div class="ci-tray">${illus(p.cat, p.hue)}</div>
+      <div class="ci-tray" style="${catStyle(p.cat)}">${illus(p.cat, p.hue)}</div>
       <div>
         <p class="ci-name">${esc(p.name)}</p>
         <p class="ci-meta">${p.cond === 'novo' ? 'Novo' : 'Seminovo'}, ${brl(p.price)} cada</p>
@@ -1030,8 +1216,8 @@ function renderCart(){
       </div></li>`; }).join('');
   const t = cartTotal();
   foot.innerHTML = `<div class="sum"><span>Subtotal (${cartCount()} ${cartCount() === 1 ? 'item' : 'itens'})</span><span>${brl(t)}</span></div>
-    <div class="sum pixline"><span>No Pix (5% de desconto)</span><span>${brl(pixOf(t))}</span></div>
-    <div class="sum" style="color:var(--ink-2);font-size:.92rem"><span>Ou no cartão</span><span>${MAX_INST}x de ${brl(instOf(t, MAX_INST))}</span></div>
+    <div class="sum pixline"><span>No Pix</span><span>${brl(pixTotal())}</span></div>
+    <div class="sum" style="color:var(--ink-2);font-size:.92rem"><span>No cartão</span><span>em até ${MAX_INST}x, com acréscimo</span></div>
     <p style="font-size:.88rem;color:var(--ink-2);margin:6px 0 14px">Retirada grátis na loja. Entrega com valor informado pelo WhatsApp.</p>
     <button type="button" class="btn btn-primary btn-block" id="goCheckout">Finalizar pedido</button>`;
 }
@@ -1054,22 +1240,22 @@ function openProduct(id){
   const p = byId[id]; if (!p) return;
   const rows = laudo(p);
   const chart = rows ? `<div class="chart">
-      <div class="chart-head"><strong>Laudo técnico</strong><span>Testes feitos pela equipe da loja</span></div>
+      <div class="chart-head"><strong>${p.info ? 'Estado do aparelho' : 'Laudo técnico'}</strong><span>${p.info ? 'Informações do anúncio da loja' : 'Testes feitos pela equipe da loja'}</span></div>
       <table><caption class="sr-only">Resultado dos testes de ${esc(p.name)}</caption><tbody>
       ${rows.map(([k,v]) => `<tr><th scope="row">${esc(k)}</th><td>${ICON_OK}${esc(v)}</td></tr>`).join('')}
       </tbody></table></div>`
-    : `<div class="note" style="margin-top:0">${ICON_OK.replace('<svg','<svg width="20" height="20"')}<span>Produto novo, lacrado, com nota fiscal e garantia do fabricante.</span></div>`;
+    : `<div class="note" style="margin-top:0">${ICON_OK.replace('<svg','<svg width="20" height="20"')}<span>${p.real ? 'Produto novo, com pronta entrega.' : 'Produto novo, lacrado, com nota fiscal e garantia do fabricante.'}</span></div>`;
   $('#pdBody').innerHTML = `<div class="pd">
-    <div class="pd-tray"><span class="cond ${p.cond}">${p.cond === 'novo' ? 'Novo' : 'Seminovo'}</span>${illus(p.cat, p.hue)}</div>
+    <div class="pd-tray" style="${catStyle(p.cat)}"><span class="cond ${p.cond}">${p.cond === 'novo' ? 'Novo' : 'Seminovo'}</span>${illus(p.cat, p.hue)}</div>
     <div class="pd-laudo">${chart}</div>
     <div class="pd-info">
       <p class="card-cat">${esc(CATS[p.cat].label)}</p>
       <h3 id="pdName">${esc(p.name)}</h3>
-      <ul class="specs">${p.specs.map(s => `<li>${esc(s)}</li>`).join('')}<li>Garantia da loja${p.cond === 'novo' ? ' e do fabricante' : ''}</li></ul>
+      <ul class="specs">${p.specs.map(s => `<li>${esc(s)}</li>`).join('')}${p.info || (p.real && !p.warranty) ? '' : `<li>${p.warranty ? 'Garantia de ' + esc(p.warranty) : 'Garantia da loja' + (p.cond === 'novo' ? ' e do fabricante' : '')}</li>`}</ul>
       <div class="price">
         <div class="now">${brl(p.price)}</div>
-        <div class="pix">${brl(pixOf(p.price))} no Pix (5% de desconto)</div>
-        <div class="inst">ou ${MAX_INST}x de ${brl(instOf(p.price, MAX_INST))} sem juros no cartão</div>
+        <div class="pix">${brl(pixItem(p))} no Pix${p.pix != null ? ` (economia de ${brl(p.price - p.pix)})` : ''}</div>
+        <div class="inst">ou no cartão em até ${MAX_INST}x, com acréscimo</div>
       </div>
       <div class="pd-actions">
         <button type="button" class="btn btn-primary" data-add="${p.id}">Adicionar ao carrinho</button>
@@ -1169,16 +1355,16 @@ const payMode = () => $('input[name="pay"]:checked').value;
 function renderSide(){
   const t = cartTotal();
   const pay = payMode();
-  const final = pay === 'pix' ? pixOf(t) : t;
+  const final = pay === 'pix' ? pixTotal() : t;
   $('#coSide').innerHTML = `<h3>Resumo do pedido</h3>
     <ul>${cart.map(i => `<li><span>${i.qty}x ${esc(byId[i.id].name)}</span><span>${brl(byId[i.id].price * i.qty)}</span></li>`).join('')}</ul>
     <div class="sum"><span>Subtotal</span><span>${brl(t)}</span></div>
     ${pay === 'pix' ? `<div class="sum pixline"><span>Desconto Pix</span><span>−${brl(t - final)}</span></div>` : ''}
     <div class="sum"><span>Entrega</span><span>${shipMode() === 'retirada' ? 'Grátis' : 'A combinar'}</span></div>
     <div class="sum big" style="margin-top:8px"><span>Total</span><span>${brl(final)}</span></div>`;
-  $('#payPixVal').textContent = `${brl(pixOf(t))} à vista. A loja envia a chave Pix.`;
+  $('#payPixVal').textContent = `${brl(pixTotal())} à vista. A loja envia a chave Pix.`;
   const inst = $('#cInst'); const cur = inst.value || String(MAX_INST);
-  inst.innerHTML = Array.from({ length:MAX_INST }, (_, k) => k + 1).map(n => `<option value="${n}">${n}x de ${brl(instOf(t, n))} sem juros</option>`).join('');
+  inst.innerHTML = Array.from({ length:MAX_INST }, (_, k) => k + 1).map(n => `<option value="${n}">${n === 1 ? '1x (à vista no cartão)' : n + 'x, com acréscimo'}</option>`).join('');
   inst.value = cur;
 }
 function showStep(n){
@@ -1201,8 +1387,8 @@ function addressText(){
 }
 function payText(){
   const t = cartTotal(); const p = payMode();
-  if (p === 'pix') return `Pix com 5% de desconto (${brl(pixOf(t))})`;
-  if (p === 'cartao') { const n = Number($('#cInst').value || 1); return `Cartão de crédito em ${n}x de ${brl(instOf(t, n))}`; }
+  if (p === 'pix') return `Pix (${brl(pixTotal())})`;
+  if (p === 'cartao') { const n = Number($('#cInst').value || 1); return n === 1 ? `Cartão de crédito à vista (${brl(t)})` : `Cartão de crédito em ${n}x (a loja informa o valor das parcelas)`; }
   return 'Pagar na retirada';
 }
 function shipText(){
@@ -1215,7 +1401,7 @@ function renderReview(){
   $('#review').innerHTML = pairs.map(([k,v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('');
 }
 function orderMessage(){
-  const t = cartTotal(); const final = payMode() === 'pix' ? pixOf(t) : t;
+  const t = cartTotal(); const final = payMode() === 'pix' ? pixTotal() : t;
   const lines = ['Olá! Quero fazer este pedido pelo site:', ''];
   cart.forEach(i => lines.push(`• ${i.qty}x ${byId[i.id].name} (${brl(byId[i.id].price * i.qty)})`));
   lines.push('', `Total: ${brl(final)}`, `Pagamento: ${payText()}`, `Entrega: ${shipText()}`, '', `Nome: ${$('#cName').value.trim()}`, `WhatsApp: ${$('#cPhone').value}`, '', 'Podem confirmar o estoque?');
