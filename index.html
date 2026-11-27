@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#F2F6F7; --surface:#FFFFFF; --ink:#12262E; --ink-2:#465B63; --line:#CFDCE0;
+  --paper:#F2F6F7; --surface:#FFFFFF; --ink:#12262E; --ink-2:#465B63; --line:#CFDCE0; --field:#7A8F96;
   --teal:#0A6B66; --teal-ink:#064A47; --teal-tint:#DDEDEA; --pulse:#D62839; --ok:#1B7A48; --warn:#8A4F00;
   --focus:#0B57D0;
   --r-sm:8px; --r-md:10px; --r-lg:14px; --r-xl:20px;
@@ -44,6 +44,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 
 /* faixa de protótipo */
 .demo-bar{background:var(--ink);color:#E6EEF0;font-size:.875rem;text-align:center;padding:8px 16px}
+.demo-short{display:none}
 
 /* cabeçalho */
 .site-hdr{position:sticky;top:0;z-index:30;background:rgba(242,246,247,.94);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
@@ -54,7 +55,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .logo-txt{font-family:var(--display);font-weight:800;font-size:1.2rem;line-height:1}
 .logo-txt small{display:block;font-family:var(--body);font-weight:400;font-size:.75rem;color:var(--ink-2);margin-top:3px;letter-spacing:0}
 .search{position:relative;flex:1;max-width:520px}
-.search input{width:100%;height:48px;border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:0 44px 0 46px;font-size:1rem}
+.search input{width:100%;height:48px;border:1.5px solid var(--field);background:var(--surface);border-radius:999px;padding:0 44px 0 46px;font-size:1rem}
 .search input:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px rgba(10,107,102,.25)}
 .search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--ink-2);pointer-events:none}
 .search .clear{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:36px;height:36px;border:0;background:none;border-radius:50%;cursor:pointer;color:var(--ink-2);display:none}
@@ -84,11 +85,12 @@ button,input,select,textarea{font:inherit;color:inherit}
 .btn[disabled]{opacity:.55;cursor:not-allowed;transform:none}
 
 /* hero */
-.hero{padding:56px 0 8px;overflow:hidden}
-.hero h1{font-size:clamp(2.25rem,5.6vw,4.25rem);font-weight:800;max-width:17ch}
+.hero{padding:48px 0 0;overflow:hidden}
+.hero h1{font-size:clamp(2.25rem,5.6vw,4.25rem);font-weight:800;max-width:17ch;text-wrap:balance}
 .hero-lede{font-size:1.175rem;color:var(--ink-2);max-width:54ch;margin-top:20px}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.ecg{margin:36px 0 0;width:100%;height:auto;overflow:visible}
+.ecg{margin:32px 0 0;width:100%;height:auto;overflow:visible}
+.ecg-side{display:none}
 .ecg .trace{fill:none;stroke:var(--pulse);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
 .ecg .deck{fill:var(--ink)}
 .ecg .glass{fill:var(--teal)}
@@ -98,15 +100,22 @@ button,input,select,textarea{font:inherit;color:inherit}
 .ecg .alive{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .9s ease-out 2.45s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes on{to{opacity:.95}}
+@media (min-width:1025px){
+  .hero{padding:56px 0 40px}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center}
+  .hero h1{font-size:clamp(2.75rem,3.7vw,3.25rem);max-width:none}
+  .ecg-wide{display:none}
+  .ecg-side{display:block;margin:0;overflow:hidden}
+}
 
 /* faixa de confiança */
-.trust{list-style:none;margin:0;padding:22px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px 28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust{list-style:none;margin:0;padding:24px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px 28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .trust li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:var(--ink-2)}
 .trust strong{display:block;color:var(--ink);font-size:1rem}
 .trust svg{width:26px;height:26px;color:var(--teal);flex-shrink:0;margin-top:1px}
 
 /* seções */
-.section{padding:72px 0}
+.section{padding:64px 0}
 .sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:24px}
 .sec-head h2{font-size:clamp(1.75rem,3.4vw,2.5rem);font-weight:800}
 .sec-head p{color:var(--ink-2);max-width:60ch;margin-top:8px}
@@ -116,12 +125,12 @@ button,input,select,textarea{font:inherit;color:inherit}
 .chip{flex-shrink:0;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700;color:var(--ink)}
 .chip:hover{border-color:var(--ink-2)}
 .chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-.toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:14px 0 20px}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:16px 0 24px}
 .result-count{font-weight:700}
 .result-count span{font-weight:400;color:var(--ink-2)}
 .selects{display:flex;gap:10px;flex-wrap:wrap}
 .field-inline{display:flex;align-items:center;gap:8px;font-size:.95rem;color:var(--ink-2)}
-select,.input{min-height:48px;border:1.5px solid var(--line);border-radius:var(--r-md);background:var(--surface);padding:0 14px;font-size:1rem;color:var(--ink)}
+select,.input{min-height:48px;border:1.5px solid var(--field);border-radius:var(--r-md);background:var(--surface);padding:0 14px;font-size:1rem;color:var(--ink)}
 select{padding-right:36px;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2312262E' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:16px}
 select:focus,.input:focus,textarea:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px rgba(10,107,102,.25)}
 .active-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
@@ -137,7 +146,7 @@ select:focus,.input:focus,textarea:focus{border-color:var(--teal);outline:none;b
 .tray svg{width:82%;height:auto}
 .cond{position:absolute;left:12px;top:12px;font-size:.8rem;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--surface);color:var(--ink)}
 .cond.novo{background:var(--ink);color:#fff}
-.card-body{display:flex;flex-direction:column;gap:6px;padding:16px 16px 18px;flex:1}
+.card-body{display:flex;flex-direction:column;gap:6px;padding:16px 16px 20px;flex:1}
 .card-cat{font-size:.85rem;color:var(--ink-2)}
 .card-title{font-family:var(--display);font-weight:600;font-size:1.12rem;line-height:1.25;text-align:left;background:none;border:0;padding:0;cursor:pointer;color:var(--ink)}
 .card-title:hover{color:var(--teal)}
@@ -163,47 +172,47 @@ select:focus,.input:focus,textarea:focus{border-color:var(--teal);outline:none;b
 .services svg{width:22px;height:22px;color:var(--teal);flex-shrink:0;margin-top:2px}
 .services strong{display:block}
 .services span{font-size:.92rem;color:var(--ink-2)}
-.steps{list-style:none;counter-reset:s;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.steps{list-style:none;counter-reset:s;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px}
 .steps li{counter-increment:s;position:relative;padding-top:52px}
 .steps li::before{content:counter(s);position:absolute;top:0;left:0;width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;font-family:var(--display);font-weight:800;display:grid;place-items:center}
-.steps li:not(:last-child)::after{content:"";position:absolute;top:20px;left:48px;right:-12px;height:2px;background:var(--line)}
+.steps li:nth-child(odd)::after{content:"";position:absolute;top:20px;left:48px;right:-12px;height:2px;background:var(--line)}
 .steps strong{display:block;font-size:1.05rem}
 .steps span{color:var(--ink-2);font-size:.95rem}
-.form-panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-xl);padding:28px}
+.form-panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-xl);padding:32px}
 .form-panel h3{font-size:1.5rem}
 .form-panel > p{color:var(--ink-2);margin-top:6px}
 
 /* formulários */
-.field{display:flex;flex-direction:column;gap:6px;margin-top:18px}
+.field{display:flex;flex-direction:column;gap:6px;margin-top:16px}
 .field label,.legend{font-weight:700}
 .field .hint{font-size:.88rem;color:var(--ink-2)}
 .field .opt{font-weight:400;color:var(--ink-2)}
 .field .input,.field select,.field textarea{width:100%}
-textarea{min-height:96px;border:1.5px solid var(--line);border-radius:var(--r-md);background:var(--surface);padding:12px 14px;resize:vertical;font-size:1rem}
+textarea{min-height:96px;border:1.5px solid var(--field);border-radius:var(--r-md);background:var(--surface);padding:12px 14px;resize:vertical;font-size:1rem}
 .err{color:#B3261E;font-size:.9rem;font-weight:700;display:none}
 .field.invalid .err{display:block}
 .field.invalid .input,.field.invalid select,.field.invalid textarea{border-color:#B3261E}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
 .row-cep{display:grid;grid-template-columns:1fr auto;gap:10px}
-fieldset{border:0;padding:0;margin:18px 0 0;min-width:0}
+fieldset{border:0;padding:0;margin:16px 0 0;min-width:0}
 legend{padding:0;margin-bottom:8px}
 .choice-chips{display:flex;flex-wrap:wrap;gap:8px}
 .choice-chips label{position:relative}
 .choice-chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.choice-chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-weight:700;cursor:pointer}
+.choice-chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--field);background:var(--surface);font-weight:700;cursor:pointer}
 .choice-chips input:checked + span{background:var(--ink);color:#fff;border-color:var(--ink)}
 .choice-chips input:focus-visible + span{outline:3px solid var(--focus);outline-offset:2px}
 .options{display:grid;gap:10px}
-.option{display:flex;gap:14px;align-items:flex-start;padding:16px;border:1.5px solid var(--line);border-radius:var(--r-lg);background:var(--surface);cursor:pointer}
+.option{display:flex;gap:16px;align-items:flex-start;padding:16px;border:1.5px solid var(--field);border-radius:var(--r-lg);background:var(--surface);cursor:pointer}
 .option:has(input:checked){border-color:var(--teal);box-shadow:inset 0 0 0 1px var(--teal);background:#F4FAF9}
 .option input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--teal);flex-shrink:0}
 .option strong{display:block}
 .option span{font-size:.92rem;color:var(--ink-2)}
-.note{display:flex;gap:10px;padding:14px 16px;border-radius:var(--r-md);background:var(--teal-tint);color:var(--teal-ink);font-size:.95rem;margin-top:18px}
+.note{display:flex;gap:10px;padding:14px 16px;border-radius:var(--r-md);background:var(--teal-tint);color:var(--teal-ink);font-size:.95rem;margin-top:16px}
 .note svg{width:20px;height:20px;flex-shrink:0;margin-top:2px}
 
 /* lojas */
-.stores{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stores{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
 .store{padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);display:flex;flex-direction:column;gap:8px}
 .store h3{font-size:1.2rem}
 .store p{color:var(--ink-2);font-size:.95rem}
@@ -240,7 +249,8 @@ dialog[open]{animation:pop .2s ease-out}
 .dlg-body{padding:20px}
 
 /* detalhe do produto */
-.pd{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.pd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"tray info" "laudo info";gap:24px 32px;align-items:start}
+.pd-tray{grid-area:tray}.pd-info{grid-area:info}.pd-laudo{grid-area:laudo}
 .pd > div{min-width:0}
 .pd-tray{background:var(--teal-tint);border-radius:var(--r-lg);aspect-ratio:10/7;display:grid;place-items:center;position:relative}
 .pd-tray svg{width:78%}
@@ -250,9 +260,8 @@ dialog[open]{animation:pop .2s ease-out}
 .pd .specs li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal);margin-top:9px;flex-shrink:0}
 .pd .price{padding-top:16px}
 .pd .price .now{font-size:2rem}
-.pd-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-.pd-actions .btn{flex:1 1 200px}
-.chart{margin-top:24px;border:1.5px solid var(--ink);border-radius:var(--r-lg);overflow:hidden}
+.pd-actions{display:grid;gap:12px;margin-top:16px}
+.chart{border:1.5px solid var(--ink);border-radius:var(--r-lg);overflow:hidden}
 .chart-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;background:var(--ink);color:#fff}
 .chart-head strong{font-family:var(--display);font-size:1.05rem}
 .chart-head span{font-size:.85rem;color:#C9D7DC}
@@ -275,7 +284,7 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
 .ci-name{font-weight:700;line-height:1.3}
 .ci-meta{font-size:.88rem;color:var(--ink-2)}
 .ci-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
-.qty{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:var(--r-md)}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--field);border-radius:var(--r-md)}
 .qty button{width:44px;height:44px;border:0;background:none;cursor:pointer;font-size:1.25rem;font-weight:700}
 .qty button:disabled{opacity:.35;cursor:not-allowed}
 .qty output{min-width:28px;text-align:center;font-weight:700}
@@ -318,37 +327,40 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
 /* navegação inferior (celular) */
 .bottom-nav{display:none}
 
+@media (max-width:1200px){
+  :root{--hdr:auto}
+  .hdr{flex-wrap:wrap;gap:10px 12px;padding-top:10px;padding-bottom:10px}
+  .search{order:3;flex-basis:100%;max-width:none}
+  html{scroll-padding-top:136px}
+}
 @media (max-width:1024px){
   .trust{grid-template-columns:repeat(2,1fr)}
   .assist-grid{grid-template-columns:1fr}
-  .stores{grid-template-columns:repeat(2,1fr)}
   .hdr-nav a.navlink{display:none}
   .co{grid-template-columns:1fr}
   .co-side{border-left:0;border-top:1px solid var(--line)}
 }
 @media (max-width:760px){
-  :root{--hdr:auto}
-  .hdr{flex-wrap:wrap;gap:10px 12px;padding:10px 0}
-  .search{order:3;flex-basis:100%;max-width:none}
   .hdr-nav .wa-top{display:none}
   .hdr-nav .cart-top .lbl{display:none}
-  html{scroll-padding-top:136px}
-  .hero{padding-top:36px}
-  .section{padding:56px 0}
+  .demo-long{display:none}
+  .demo-short{display:inline}
+  .hero{padding-top:32px}
+  .section{padding:48px 0}
   .services{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr 1fr;gap:28px 16px}
-  .steps li:nth-child(2)::after{display:none}
-  .pd{grid-template-columns:1fr}
+  .steps{gap:24px 16px}
+  .pd{grid-template-columns:minmax(0,1fr);grid-template-areas:"tray" "info" "laudo"}
+  .chips{padding-right:32px;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent)}
   .ftr-grid{grid-template-columns:1fr}
   .bottom-nav{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
   .bottom-nav a,.bottom-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:60px;font-size:.78rem;font-weight:700;color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer;position:relative}
   .bottom-nav svg{width:24px;height:24px}
   .bottom-nav .badge-count{position:absolute;top:6px;left:calc(50% + 6px);min-width:20px;height:20px;font-size:.72rem}
-  body{padding-bottom:calc(60px + env(safe-area-inset-bottom))}
+  .site-ftr{padding-bottom:calc(32px + 60px + env(safe-area-inset-bottom))}
   .toast{bottom:calc(72px + env(safe-area-inset-bottom))}
   dialog:not(.drawer){width:100vw;max-width:100vw;max-height:100dvh;height:100dvh;margin:0;border-radius:0}
   dialog.drawer{border-radius:0}
-  .form-panel{padding:20px}
+  .form-panel{padding:24px 20px}
 }
 @media (max-width:560px){
   .wrap{padding:0 16px}
@@ -365,8 +377,13 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
   .card .btn .long{display:none}
   .cond{left:8px;top:8px;font-size:.72rem;padding:3px 8px}
   .trust{grid-template-columns:1fr}
-  .stores{grid-template-columns:1fr}
   .row2{grid-template-columns:1fr}
+  .hero-cta .btn{flex:1 1 100%}
+  .toolbar{display:grid;gap:12px}
+  .selects{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:12px}
+  .pd .price .pix,.pd .price .inst{font-size:.95rem}
+  .field-inline{flex-direction:column;align-items:stretch;gap:4px}
+  .field-inline select{width:100%}
   .stepper{font-size:.78rem}
   .co-main{padding:4px 16px 20px}
 }
@@ -384,7 +401,7 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<div class="demo-bar" role="note">Protótipo de demonstração: produtos, preços e condições são exemplos e precisam ser confirmados pela loja.</div>
+<div class="demo-bar" role="note"><span class="demo-long">Protótipo de demonstração: produtos, preços e condições são exemplos e precisam ser confirmados pela loja.</span><span class="demo-short">Protótipo: produtos e preços são exemplos.</span></div>
 
 <header class="site-hdr">
   <div class="wrap hdr">
@@ -418,14 +435,22 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
 
 <main id="conteudo">
   <section class="hero" id="topo" aria-labelledby="heroTitle">
-    <div class="wrap">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
       <h1 id="heroTitle">Seu próximo notebook sai daqui com laudo e garantia.</h1>
       <p class="hero-lede">Seminovos testados peça por peça e assistência técnica para notebooks, computadores e MacBooks. Atendimento pelo WhatsApp e retirada na loja.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#loja">Ver seminovos</a>
         <a class="btn btn-line" href="#assistencia">Agendar conserto</a>
       </div>
-      <svg class="ecg" viewBox="0 0 1200 236" role="img" aria-label="Ilustração: linha de batimento cardíaco que desenha um notebook e o liga">
+      </div>
+      <svg class="ecg ecg-side" viewBox="380 30 620 236" role="img" aria-label="Ilustração: linha de batimento cardíaco que desenha um notebook e o liga">
+        <rect class="glass" x="566" y="48" width="308" height="146" rx="4"/>
+        <path class="trace" pathLength="1" d="M384 200H410l8-7 8 7h14l9-70 13 122 11-80 8 28h40H560V50a8 8 0 0 1 8-8H872a8 8 0 0 1 8 8V200H1000"/>
+        <path class="deck" d="M512 200H928l-18 20H530Z"/>
+        <path class="alive" pathLength="1" d="M600 128H668l9-10 9 10h14l9-48 12 84 11-56 7 20H842"/>
+      </svg>
+      <svg class="ecg ecg-wide" viewBox="0 0 1200 236" role="img" aria-label="Ilustração: linha de batimento cardíaco que desenha um notebook e o liga">
         <rect class="glass" x="566" y="48" width="308" height="146" rx="4"/>
         <path class="trace" pathLength="1" d="M4 200H118l10-9 10 9h26l9-70 13 122 11-80 8 28h32H318l8-7 8 7H560V50a8 8 0 0 1 8-8H872a8 8 0 0 1 8 8V200H1196"/>
         <path class="deck" d="M512 200H928l-18 20H530Z"/>
@@ -610,7 +635,7 @@ dialog.drawer[open]{display:flex;animation:slide .25s ease-out}
 </nav>
 
 <!-- Detalhe do produto -->
-<dialog id="dlgProduct" aria-labelledby="pdTitle">
+<dialog id="dlgProduct" aria-labelledby="pdName">
   <div class="dlg-head"><h2 id="pdTitle">Detalhes do aparelho</h2><button class="x" type="button" data-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <div class="dlg-body" id="pdBody"></div>
 </dialog>
@@ -778,7 +803,7 @@ const CATS = {
   tablet:{ label:'Tablets' }, som:{ label:'Caixas de som' }
 };
 
-const H = { teal:'#2E8C86', blue:'#3B6EA8', lilac:'#7466A6', green:'#3E8E5A', amber:'#B07A26', slate:'#557580', rose:'#A65A6B' };
+const H = { teal:'#2E8C86', blue:'#3B6EA8', lilac:'#4C6E96', green:'#3E8E5A', amber:'#A57A32', slate:'#557580', rose:'#2F6F73' };
 
 const PRODUCTS = [
   { id:'mba-m1', cat:'macbook', cond:'seminovo', name:'MacBook Air M1 (2020)', specs:['Chip Apple M1','8 GB de memória','SSD de 256 GB','Tela Retina de 13,3"'], price:3999, bat:91, ssd:98, hue:H.slate },
@@ -1033,16 +1058,13 @@ function openProduct(id){
       <table><caption class="sr-only">Resultado dos testes de ${esc(p.name)}</caption><tbody>
       ${rows.map(([k,v]) => `<tr><th scope="row">${esc(k)}</th><td>${ICON_OK}${esc(v)}</td></tr>`).join('')}
       </tbody></table></div>`
-    : `<div class="note" style="margin-top:24px">${ICON_OK.replace('<svg','<svg width="20" height="20"')}<span>Produto novo, lacrado, com nota fiscal e garantia do fabricante.</span></div>`;
-  $('#pdTitle').textContent = p.name;
+    : `<div class="note" style="margin-top:0">${ICON_OK.replace('<svg','<svg width="20" height="20"')}<span>Produto novo, lacrado, com nota fiscal e garantia do fabricante.</span></div>`;
   $('#pdBody').innerHTML = `<div class="pd">
-    <div>
-      <div class="pd-tray"><span class="cond ${p.cond}">${p.cond === 'novo' ? 'Novo' : 'Seminovo'}</span>${illus(p.cat, p.hue)}</div>
-      ${chart}
-    </div>
-    <div>
+    <div class="pd-tray"><span class="cond ${p.cond}">${p.cond === 'novo' ? 'Novo' : 'Seminovo'}</span>${illus(p.cat, p.hue)}</div>
+    <div class="pd-laudo">${chart}</div>
+    <div class="pd-info">
       <p class="card-cat">${esc(CATS[p.cat].label)}</p>
-      <h3>${esc(p.name)}</h3>
+      <h3 id="pdName">${esc(p.name)}</h3>
       <ul class="specs">${p.specs.map(s => `<li>${esc(s)}</li>`).join('')}<li>Garantia da loja${p.cond === 'novo' ? ' e do fabricante' : ''}</li></ul>
       <div class="price">
         <div class="now">${brl(p.price)}</div>
@@ -1283,7 +1305,7 @@ $('#repairForm').addEventListener('submit', e => {
 
 /* ---------- lojas ---------- */
 $('#stores').innerHTML = STORES.map(s => `<article class="store"><h3>${esc(s.name)}</h3><p>${esc(s.addr)}</p>
-  </article>`).join('');
+  <a data-wa="${esc('Olá! Tenho uma dúvida sobre a ' + s.name + '.')}" href="#" target="_blank" rel="noopener">Falar com esta loja pelo WhatsApp</a></article>`).join('');
 
 /* ---------- toast ---------- */
 let toastTimer;
